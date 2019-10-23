@@ -1,0 +1,29 @@
+class Stack:
+    def __init__(self):
+        self.items=[]
+        
+    def push(self):
+        num=int(input('Enter ele: '))
+        self.items.append(num)
+        
+    def display(self):
+        print( self.items )
+    
+    def pop(self):
+        if(len(self.items)!=0):
+            self.items.pop()      # For queue make pop(0). Pops element with index 0 (first element) - FIFO
+            print( self.items )   # displays elements after popping
+        else: print('Under flow') # if stack is empty
+    
+S=Stack()     # S is an object of class Stack
+
+while True:
+    op=input('\nPush\npop\ndisplay\nexit\n').strip().lower()
+    if op=='push':
+        S.push()
+    elif op=='pop':
+        S.pop()
+    elif op=='display':
+        S.display()
+    elif op=='exit':
+        break
